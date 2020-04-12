@@ -1,5 +1,5 @@
 # wksctl
-Deploy kubernetes via GitOps
+Deploy kubernetes via GitOps https://github.com/weaveworks/wksctl
 
 ## WKS and Vagrant
 ```bash
