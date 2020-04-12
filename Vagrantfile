@@ -18,9 +18,10 @@ Vagrant.configure("2") do |config|
 
             config.vm.network :private_network, ip: "172.17.8.#{i+100}"
             # Allows ssh access to the boxes
-            config.vm.network :forwarded_port, guest: 22, host: "22#{i}2", id: "ssh"
+            
+            config.vm.network :forwarded_port, host_ip:"127.0.0.1", guest: 22, host: "22#{i}2", id: "ssh"
             # We need this to establish kubectl connectivity with kubernetes master api
-            config.vm.network :forwarded_port, guest: 6443, host: "644#{i}3"
+            config.vm.network :forwarded_port, host_ip:"127.0.0.1", guest: 6443, host: "644#{i}3", id: "kube"
             # The below line is required for Weave Net to reach the API server
             # in order to get the list of peers. Without it, worker nodes never
             # become "Ready".
