@@ -4,7 +4,7 @@ Deploy kubernetes via GitOps https://github.com/weaveworks/wksctl
 ## WKS and Vagrant
 ```bash
 $ vagrant up
-$ rm -rf /Users/boriphuth/.ssh/known_hosts
+$ rm -rf $HOME/.ssh/known_hosts
 $ for i in `seq 2212 10 2232`; do ssh -p $i vagrant@127.0.0.1 -i ~/.vagrant.d/insecure_private_key -o StrictHostKeyChecking=no "hostname && exit"; done
 
 $ ssh -p 2222 vagrant@127.0.0.1 -i ~/.vagrant.d/insecure_private_key -o StrictHostKeyChecking=no "hostname && exit"
