@@ -19,6 +19,15 @@ $ wksctl kubeconfig --artifact-directory ../
 $ export KUBECONFIG=../weavek8sops/example/kubeconfig
 ```
 
+## Edit 
+```bash
+$HOME/.kube/config
+server: https://127.0.0.1:64413
+
+for i in `seq 2 1 3`; do kubectl label node 'kube-0'$i node-role.kubernetes.io/worker=worker; done
+
+```
+
 ```bash
 $ vagrant ssh kube-01
 [vagrant@kube-01 ~]$  sudo -i
