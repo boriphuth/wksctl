@@ -37,9 +37,10 @@ $ vagrant ssh kube-01
 [root@kube-01 ~] kubectl get nodes
 [root@kube-01 ~] for i in `seq 2 1 3`; do kubectl label node 'kube-0'$i node-role.kubernetes.io/worker=worker; done
 ```
-NAME      STATUS   ROLES    AGE     VERSION
-kube-01   Ready    master   8m8s    v1.13.3
-kube-02   Ready    <none>   4m53s   v1.13.3
+NAME      STATUS   ROLES    AGE    VERSION
+kube-01   Ready    master   108m   v1.14.1
+kube-02   Ready    worker   106m   v1.14.1
+kube-03   Ready    worker   103m   v1.14.1
 
 At any time, one can look at what the controller is doing:
 ```bash
